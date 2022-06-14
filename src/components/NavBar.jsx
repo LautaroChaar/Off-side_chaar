@@ -7,39 +7,32 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import CartWidget from './CartWidget';
 
 const pages = ['Camisetas', 'Pelotas', 'Botines'];
-const settings = ['Perfil', 'Cuenta', 'Salir'];
 
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   return (
     <AppBar position="static" sx={{ backgroundColor:'#66467f'}}>
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
-          <SportsSoccerIcon sx={{ display: { xs: 'none', md: 'flex', color: 'black' }}} />
+          <SportsSoccerIcon sx={{ display: { xs: 'none', md: 'flex', color: '#17181a' }}} />
           <Typography
             variant="h5"
             noWrap
@@ -51,7 +44,7 @@ export default function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'black',
+              color: '#17181a',
               textDecoration: 'none',
             }}
           >
@@ -67,7 +60,7 @@ export default function Navbar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: '#17181a' }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -94,7 +87,7 @@ export default function Navbar() {
               ))}
             </Menu>
           </Box>
-          <SportsSoccerIcon sx={{ display: { xs: 'flex', md: 'none', color: 'black' }}} />
+          <SportsSoccerIcon sx={{ display: { xs: 'flex', md: 'none', color: '#17181a' }}} />
           <Typography
             variant="h5"
             noWrap
@@ -118,41 +111,14 @@ export default function Navbar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block', fontSize: '18px'}}
+                sx={{ my: 2, color: '#17181a', display: 'block', fontSize: '18px'}}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Lautaro Chaar" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+          <CartWidget/>
           </Box>
         </Toolbar>
       </Container>
