@@ -9,8 +9,7 @@ function App() {
       <header className="App-header">
         <Navbar></Navbar>
       </header>
-      <h1>Siempre un paso adelante!</h1>
-      <ItemListContainer type= "Pelota" title= "Qatar 2022" image= "pelotaQatar2022" price="$15.000"/>
+      <ItemListContainer greeting="Bienvenido a Off-side, siempre un paso adelante!" type= "Pelota" title= "Qatar 2022" image= "pelotaQatar2022" price="$15.000"/>
     </div>
   );
 }
