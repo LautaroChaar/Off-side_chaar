@@ -3,13 +3,10 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
 
-export default function ItemListContainer({ greeting, type, title, image, price, stock, initial }) {
+export default function ItemListContainer({ greeting, type, title, image, price, stock, initial, onAdd }) {
 
-	const onAdd = (initial) => {
-		alert(`Agregaste ${initial} producto/s al carrito de compra.`)
-	};
 
   return (
 		<section>
@@ -23,7 +20,7 @@ export default function ItemListContainer({ greeting, type, title, image, price,
 						<h3 className='type'>
 						{type}
 						</h3>
-						<img className='img' src={require(`../images/${image}.png`)} alt="Pelota-Qatar2022" />
+						<img className='img' src={require(`../../images/${image}.png`)} alt="Pelota-Qatar2022" />
 						<p className='price'>
 							{price}
 						</p>
