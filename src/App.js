@@ -15,7 +15,7 @@ function App() {
       <header className="App-header">
         <Navbar></Navbar>
       </header>
-      <ItemListContainer greeting="Bienvenido a Off-side, siempre un paso adelante!" type= "Pelota" title= "Qatar 2022" image= "pelotaQatar2022" price="$15.000" stock={10} initial={0} onAdd={onAdd} />
+      <ItemListContainer greeting="Bienvenido a Off-side, siempre un paso adelante!" onAdd={onAdd} />
     </div>
   );
 }
