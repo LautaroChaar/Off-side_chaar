@@ -1,21 +1,25 @@
 import './App.css';
 import Navbar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import {BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
 function App() {
 
-  const onAdd = (initial) => {
-		alert(`Agregaste ${initial} producto/s al carrito de compra.`)
-	};
-
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar></Navbar>
-      </header>
-      <ItemListContainer greeting="Bienvenido a Off-side, siempre un paso adelante!" onAdd={onAdd} />
+      <BrowserRouter>
+        <header className="App-header">
+          <Navbar></Navbar>
+        </header>
+          <Routes>
+            <Route path="/" element={<ItemListContainer greeting="Bienvenido a Off-side, siempre un paso adelante!" />} />
+            <Route path="/category/:category" element={<ItemListContainer greeting="Bienvenido a Off-side, siempre un paso adelante!" />} />
+            <Route path="/product/:id" element={<ItemDetailContainer />} />
+          </Routes>
+      </BrowserRouter>      
     </div>
   );
 }

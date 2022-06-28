@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import CartWidget from '../CartWidget/CartWidget';
+import Link from '@mui/material/Link';
 
 const pages = ['Camisetas', 'Pelotas', 'Botines'];
 
