@@ -24,25 +24,27 @@ export default function ItemListContainer({ greeting }) {
 
 		let productsFilter = products.filter( item => item.category === (category)); 
 
-	new Promise ((resolve, reject) => {
-		setTimeout(()=>{
-			category ? resolve(productsFilter) : resolve(products)
-		}, 2000)
-	}).then((result)=> {	
-		setProductList(result);
-		setLoading(false);
-	})
-}, [category])
+		new Promise ((resolve, reject) => {
+			setTimeout(()=>{
+				category ? resolve(productsFilter) : resolve(products)
+			}, 2000)})
+			.then((result)=> {	
+			setProductList(result);
+			setLoading(false);})
+	}, [category])
 
   return (
 		<div>
 			{ loading 
 				? <p>...</p> 
-				: <>
-					<h1>{greeting}</h1>
-					<section>
-						<ItemList productList={productList} />
-					</section></>}
+				: 
+				<> 
+				<h1>{greeting}</h1>
+				<section>
+					<ItemList productList={productList} />
+				</section>
+				</>
+			}
 		</div>
   );
 }

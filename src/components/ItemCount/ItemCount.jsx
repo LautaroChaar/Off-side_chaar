@@ -8,6 +8,7 @@ import './ItemCount.css';
 
 
 export default function ItemCount({ stock, initial, onAdd }) {
+
   const [count, setCount] = React.useState(initial);
 
   return (

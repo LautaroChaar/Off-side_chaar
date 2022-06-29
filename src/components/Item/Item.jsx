@@ -2,11 +2,15 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import './Item.css';
+import { Link } from 'react-router-dom';
 
 export default function Item({ id, title, category, image, price, stock, initial, onAdd }) {
+
+
   return (
     <article className='item'>
-				<Card>
+			<Link className='itemLink' to={`/product/${id}`}>
+				<Card className='cardItem'>
 					<CardContent className='bgItem'>
 						<p className='id'>{id}</p>
 						<h2 className='title'>
@@ -21,6 +25,7 @@ export default function Item({ id, title, category, image, price, stock, initial
 						</p>
 					</CardContent>
 				</Card>
-			</article>
+			</Link>
+		</article>
   )
 }

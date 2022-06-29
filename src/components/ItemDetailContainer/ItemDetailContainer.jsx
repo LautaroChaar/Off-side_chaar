@@ -26,13 +26,12 @@ export default function ItemDetailContainer(onAdd) {
 				setTimeout(() => {
 						resolve(products)
 				}, 2000)
-		}).then(result => {
-			setProductDetail(result.find((product) => product.id ===  Number(id)));
-			setLoading(false);
-		})
-}, [id])
+				}).then(result => {
+				setProductDetail(result.find((product) => product.id ===  Number(id)));
+				setLoading(false);
+				})
+		}, [id])
 
-		
 
 return (
 	

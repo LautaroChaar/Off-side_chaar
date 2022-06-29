@@ -11,9 +11,10 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import CartWidget from '../CartWidget/CartWidget';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
+import './NavBar.css'
 
-const pages = ['Camisetas', 'Pelotas', 'Botines'];
+const pages = ['camisetas', 'pelotas', 'botines'];
 
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -34,24 +35,20 @@ export default function Navbar() {
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <SportsSoccerIcon sx={{ display: { xs: 'none', md: 'flex', color: '#17181a' }}} />
-          <Typography
+          <Typography 
             variant="h5"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: '#17181a',
               textDecoration: 'none',
             }}
           >
-            FF-SIDE
+          <Link className='brand' to= {"/"} >FF-SIDE</Link>
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -92,8 +89,6 @@ export default function Navbar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -101,20 +96,19 @@ export default function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'black',
               textDecoration: 'none',
             }}
           >
-            FF-SIDE
+          <Link className='brand' to= {"/"} >FF-SIDE</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'space-evenly' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#17181a', display: 'block', fontSize: '18px'}}
+                sx={{ my: 2, color: '#17181a', display: 'block', fontSize: '18px', textDecoration: 'none'}}
               >
-                {page}
+                <Link className='categoryName' to={`/category/${page}`}>{page}</Link>
               </Button>
             ))}
           </Box>
