@@ -16,19 +16,13 @@ export default function ItemDetail({ productDetail }) {
 				<Card>
 					<CardContent className='bgItem'>
 						<p className='id'>{productDetail.id}</p>
-						<h2 className='title'>
-						{productDetail.title}
-						</h2>
-						<h3 className='category'>
-						{productDetail.category}
-						</h3>
+						<h2 className='title'>{productDetail.title}</h2>
+						<h3 className='category'>{productDetail.category}</h3>
 						<img className='img' src={require(`../../images/${productDetail.image}`)} alt={productDetail.image} />
-						<p className='price'>
-							{productDetail.price}
-						</p>
+						<p className='price'>{productDetail.price}</p>
 					</CardContent>
 					<CardActions className='cardActionBg'>
-					<ItemCount stock= {productDetail.stock} initial= {productDetail.initial} onAdd= {onAdd} ></ItemCount>
+					<ItemCount stock= {productDetail.stock} initial= {productDetail.initial} onAdd={onAdd} productDetail={productDetail} ></ItemCount>
 					</CardActions>
 				</Card>
 			</article>

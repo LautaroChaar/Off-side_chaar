@@ -6,13 +6,17 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { Link } from 'react-router-dom';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import './ItemCount.css';
+import { cartContext } from '../../Context/CartContext/CartContext';
+import { useContext } from 'react';
 
 
-export default function ItemCount({ stock, initial, onAdd }) {
+export default function ItemCount({ stock, initial, onAdd, productDetail }) {
 
   const [count, setCount] = React.useState(initial);
-
+  const { addItem } = useContext(cartContext);
+  
   return (
+   
       <div>
         <ButtonGroup className='btnGroup'>
           <div className='addCartbtn'>
@@ -48,7 +52,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
               <AddShoppingCartIcon fontSize="small" sx={{color: '#66467f'}}></AddShoppingCartIcon>
             </Button>
           </div>
-          <Button variant='text'><Link className='buyBtn' to={'/cart'}>Comprar</Link></Button>
+          <Button variant='text'><Link className='buyBtn' to={'/cart'} >Comprar</Link></Button>
         </ButtonGroup>
       </div>
   );

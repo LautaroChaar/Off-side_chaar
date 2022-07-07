@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import './Item.css';
 import { Link } from 'react-router-dom';
 
-export default function Item({ id, title, category, image, price, stock, initial, onAdd }) {
+export default function Item({ id, title, category, image, price}) {
 
 
   return (

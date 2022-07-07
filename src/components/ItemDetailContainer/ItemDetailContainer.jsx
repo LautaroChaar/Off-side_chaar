@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 
-export default function ItemDetailContainer(onAdd) {
+export default function ItemDetailContainer() {
 
     const [productDetail, setProductDetail] = useState([]);
 		const [loading, setLoading] = useState (true);
@@ -36,7 +36,7 @@ export default function ItemDetailContainer(onAdd) {
 return (
 	
 	<div>
-		{ loading ? <p>...</p> : <ItemDetail productDetail={productDetail} onAdd={onAdd} /> }
+		{ loading ? <p>...</p> : <ItemDetail productDetail={productDetail} /> }
 	</div> 
 )
 }
