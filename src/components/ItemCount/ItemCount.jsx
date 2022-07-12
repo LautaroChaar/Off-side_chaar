@@ -1,20 +1,41 @@
-import * as React from "react";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import { Link } from "react-router-dom";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import "./ItemCount.css";
-import { cartContext } from "../../Context/CartContext/CartContext";
+import RemoveIcon from "@mui/icons-material/Remove";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import * as React from "react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { cartContext } from "../../Context/CartContext/CartContext";
+import "./ItemCount.css";
  
 export default function ItemCount({ stock, initial, onAdd, productDetail }) {
   const [count, setCount] = React.useState(initial);
-  const { addItem, getQuantity } = useContext(cartContext);
+  const { addItem, getQuantity, increaseCartCount } = useContext(cartContext);
  
   const prevAddedQuantity = getQuantity(productDetail.id);
         
+  const buyButton = count === 0 
+  ? 
+  <Button variant="text" sx={{ display: "none" }}>
+          <Link className="buyBtn" to={"/cart"}>
+            Comprar
+          </Link>
+  </Button>
+  :
+  <Button variant="text" onClick={() => {
+    const totalQuantity = prevAddedQuantity + count;
+      if (totalQuantity <= stock && count !== 0) {
+        initial += count;
+        onAdd(initial);
+        increaseCartCount(initial);
+        addItem(productDetail, count);
+        setCount(0);
+      }
+    }}>
+    <Link className="buyBtn" to={"/cart"}>Comprar</Link>
+  </Button>;
+
   return (
     <div>
       <ButtonGroup className="btnGroup">
@@ -46,6 +67,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
               if (totalQuantity <= stock && count !== 0) {
                 initial += count;
                 onAdd(initial);
+                increaseCartCount(initial);
                 addItem(productDetail, count);
                 setCount(0);
               }
@@ -58,11 +80,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
             ></AddShoppingCartIcon>
           </Button>
         </div>
-        <Button variant="text">
-          <Link className="buyBtn" to={"/cart"}>
-            Comprar
-          </Link>
-        </Button>
+        {buyButton}
       </ButtonGroup>
     </div>
   );

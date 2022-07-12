@@ -3,10 +3,21 @@ import React from "react";
 export const cartContext = React.createContext(null);
  
 const defaultCart = [];
- 
+const cartCountDefault = 0;
+
 export default function CartContext({ children }) {
   
   const [cart, setCart] = React.useState(defaultCart);
+  const [cartCount, setCartCount] = React.useState(cartCountDefault)
+
+
+  const increaseCartCount = (quantity) => {
+    setCartCount(cartCount + quantity); 
+  }
+
+  const decreaseCartCount = product => {
+    setCartCount(cartCount - product.quantity);
+  }
  
   const isInCart = (productId) =>
     cart.some((product) => product.id === productId);
@@ -36,20 +47,32 @@ export default function CartContext({ children }) {
  
   const removeProduct = (product) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
+    decreaseCartCount(product);
   };
  
-  const clear = () => setCart(defaultCart);
+  const clear = () => {
+    setCart(defaultCart);
+    setCartCount(cartCountDefault);
+  }
  
   const getQuantity = (productId) => {
     const item = cart.find((product) => product.id === productId);
     return item ? item.quantity : 0;
   };
  
+  const totalPrice =(result) => {
+    cart.map((product) => (
+      result += product.price * product.quantity
+    ))
+    return result;
+  } 
+
+
   console.info("cart: ", cart);
  
   return (
     <>
-      <cartContext.Provider value={{ addItem, getQuantity }}>
+      <cartContext.Provider value={{ addItem, getQuantity, cart, removeProduct, totalPrice, increaseCartCount, cartCount, clear }}>
         {children}
       </cartContext.Provider>
     </>

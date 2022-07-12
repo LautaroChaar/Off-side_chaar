@@ -1,9 +1,9 @@
-.item {
+.itemDetail {
     border: 4px solid rgb(135, 207, 125);
     width: 200px;
     display: flex;
     flex-direction: column;
-    margin: 12px auto;
+    margin: 10px;
     background-color: rgb(0, 0, 0);
     box-shadow: rgb(0 0 0) 0px 3px 8px;
     
@@ -11,11 +11,6 @@
 
 .bgItem {
     background-color: rgb(0, 0, 0);
-}
-
-.id {
-    color: #66467f;
-    margin: 0;
 }
 
 .title {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import Button from "@mui/material/Button";
 import './Item.css';
 import { Link } from 'react-router-dom';
 
@@ -9,23 +10,19 @@ export default function Item({ id, title, category, image, price}) {
 
   return (
     <article className='item'>
-			<Link className='itemLink' to={`/product/${id}`}>
-				<Card className='cardItem'>
-					<CardContent className='bgItem'>
-						<p className='id'>{id}</p>
-						<h2 className='title'>
-						{title}
-						</h2>
-						<h3 className='category'>
-						{category}
-						</h3>
-						<img className='img' src={require(`../../images/${image}`)} alt={image} />
-						<p className='price'>
-							{price}
-						</p>
-					</CardContent>
-				</Card>
-			</Link>
-		</article>
+		<Card className='cardItem'>
+			<CardContent className='bgItem'>
+				<h2 className='title'>{title}</h2>
+				<h3 className='category'>{category}</h3>
+				<img className='img' src={require(`../../images/${image}`)} alt={image} />
+				<p className='price'>${price}</p>
+				<Button variant="contained" sx={{ backgroundColor: "#2e2e2e", marginTop: '14px' }} className='buttonDetail'>
+					<Link className='itemLink' to={`/product/${id}`}>
+						VER DETALLE
+					</Link>
+				</Button>
+			</CardContent>
+		</Card>
+	</article>
   )
 }
