@@ -8,7 +8,7 @@ const cartCountDefault = 0;
 export default function CartContext({ children }) {
   
   const [cart, setCart] = React.useState(defaultCart);
-  const [cartCount, setCartCount] = React.useState(cartCountDefault)
+  const [cartCount, setCartCount] = React.useState(cartCountDefault);
 
 
   const increaseCartCount = (quantity) => {
@@ -67,8 +67,6 @@ export default function CartContext({ children }) {
     return result;
   } 
 
-
-  console.info("cart: ", cart);
  
   return (
     <>

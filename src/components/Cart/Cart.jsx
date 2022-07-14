@@ -27,30 +27,35 @@ export default function Cart() {
       <h1>Carrito</h1>
       <table className='table'>
         <thead className='tableRowHead'>
-          <th><h2>Cantidad</h2></th>
-          <th></th>
-          <th className='categoryProduct'><h2>Categoria</h2></th>
-          <th><h2>Producto</h2></th>
-          <th className='unitPriceProduct'><h2>P/unitario</h2></th>
-          <th><h2>P/total</h2></th>
-          <th></th>
+          <tr>
+            <th><h2>Cantidad</h2></th>
+            <th></th>
+            <th className='categoryProduct'><h2>Categoria</h2></th>
+            <th><h2>Producto</h2></th>
+            <th className='unitPriceProduct'><h2>P/unitario</h2></th>
+            <th><h2>P/total</h2></th>
+            <th></th>
+          </tr>
         </thead>
         {cart.map(product => (
-        <tr key={product.id} className='tableRow'>
-          <td>{product.quantity}</td>
-          <td><img className='cartImgProducts' src={require(`../../images/${product.image}`)} alt={product.image}></img></td>
-          <td className='categoryProduct'>{product.category}</td>
-          <td>{product.title}</td>
-          <td className='unitPriceProduct'>${product.price}</td>
-          <td>${product.price * product.quantity}</td>
-          <td>
-            <Button color="error" onClick={() => {
-              removeProduct(product)
-            }}>
-              <DeleteForeverIcon sx={{ color: "#9f7575" }}></DeleteForeverIcon>
-          </Button>
-          </td>
-        </tr>))}
+          <tbody key={product.id}>
+            <tr className='tableRow'>
+              <td>{product.quantity}</td>
+              <td><img className='cartImgProducts' src={product.image} alt={product.image}></img></td>
+              <td className='categoryProduct'>{product.category}</td>
+              <td>{product.title}</td>
+              <td className='unitPriceProduct'>${product.price}</td>
+              <td>${product.price * product.quantity}</td>
+              <td>
+                <Button color="error" onClick={() => {
+                  removeProduct(product)
+                }}>
+                  <DeleteForeverIcon sx={{ color: "#9f7575" }}></DeleteForeverIcon>
+              </Button>
+              </td>
+            </tr>
+          </tbody>
+        ))}
       </table>
     </section>
     <div className='totalPrice'>

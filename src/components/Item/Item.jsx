@@ -14,7 +14,7 @@ export default function Item({ id, title, category, image, price}) {
 			<CardContent className='bgItem'>
 				<h2 className='title'>{title}</h2>
 				<h3 className='category'>{category}</h3>
-				<img className='img' src={require(`../../images/${image}`)} alt={image} />
+				<img className='img' src={image} alt={image} />
 				<p className='price'>${price}</p>
 				<Button variant="contained" sx={{ backgroundColor: "#2e2e2e", marginTop: '14px' }} className='buttonDetail'>
 					<Link className='itemLink' to={`/product/${id}`}>
