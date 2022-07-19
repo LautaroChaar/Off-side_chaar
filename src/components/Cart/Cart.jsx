@@ -9,9 +9,8 @@ import './Cart.css';
 
 export default function Cart() {
 
-  const { cart, removeProduct, totalPrice, clear } = useContext(cartContext);
+  const { cart, removeProduct, clear, totalToPay } = useContext(cartContext);
 
-  let result = 0;
   let totalCartProducts = cart.length === 0 
   ? 
   <div className='cartContainer'>
@@ -59,9 +58,9 @@ export default function Cart() {
       </table>
     </section>
     <div className='totalPrice'>
-      <h3>Total a pagar: $ {totalPrice(result)}</h3>
+      <h3>Total a pagar: $ {totalToPay} </h3>
       <ButtonGroup>
-        <Button variant="text" color="secondary" className='cartSectionButton'><Link className='cartSectionLink' to= "">FINALIZAR COMPRA</Link></Button>
+        <Button variant="text" color="secondary" className='cartSectionButton'><Link className='cartSectionLink' to= "/form">FINALIZAR COMPRA</Link></Button>
         <Button variant="text" color="error" className='pp' onClick={() => {
               clear();
             }}><p className='pp'>VACIAR CARRITO</p></Button>
