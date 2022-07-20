@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from "react";
-import { cartContext } from "../../Context/CartContext/CartContext";
+import { cartContext } from "../../Context/CartContext";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import { Link } from 'react-router-dom';
@@ -48,9 +48,8 @@ export default function Cart() {
               <td>
                 <Button color="error" onClick={() => {
                   removeProduct(product)
-                }}>
-                  <DeleteForeverIcon sx={{ color: "#9f7575" }}></DeleteForeverIcon>
-              </Button>
+                }}><DeleteForeverIcon sx={{ color: "#9f7575" }}></DeleteForeverIcon>
+                </Button>
               </td>
             </tr>
           </tbody>
@@ -61,13 +60,10 @@ export default function Cart() {
       <h3>Total a pagar: $ {totalToPay} </h3>
       <ButtonGroup>
         <Button variant="text" color="secondary" className='cartSectionButton'><Link className='cartSectionLink' to= "/form">FINALIZAR COMPRA</Link></Button>
-        <Button variant="text" color="error" className='pp' onClick={() => {
-              clear();
-            }}><p className='pp'>VACIAR CARRITO</p></Button>
+        <Button variant="text" color="error" className='pp' onClick={() => clear()}><p className='pp'>VACIAR CARRITO</p></Button>
       </ButtonGroup>
     </div>
   </div>
-; 
 
   return (
     <div>

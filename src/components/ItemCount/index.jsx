@@ -6,21 +6,19 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import * as React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { cartContext } from "../../Context/CartContext/CartContext";
+import { cartContext } from "../../Context/CartContext";
 import "./ItemCount.css";
  
 export default function ItemCount({ stock, initial, onAdd, productDetail }) {
+
   const [count, setCount] = React.useState(initial);
   const { addItem, getQuantity, increaseCartCount } = useContext(cartContext);
- 
   const prevAddedQuantity = getQuantity(productDetail.id);
-        
+
   const buyButton = count === 0 
   ? 
-  <Button variant="text" sx={{ display: "none" }}>
-          <Link className="buyBtn" to={"/cart"}>
-            Comprar
-          </Link>
+  <Button variant="text" sx={{ visibility: "hidden" }}>
+    <Link className="buyBtn" to={"/cart"}>Comprar</Link>  
   </Button>
   :
   <Button variant="text" onClick={() => {
@@ -77,7 +75,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
             <AddShoppingCartIcon
               fontSize="small"
               sx={{ color: "#66467f" }}
-            ></AddShoppingCartIcon>
+            />
           </Button>
         </div>
         {buyButton}

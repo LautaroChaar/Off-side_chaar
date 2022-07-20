@@ -1,12 +1,7 @@
 import React from "react";
  
-export default function FormInput({
-  label,
-  type,
-  placeholder,
-  onChange,
-  validationRegex,
-}) {
+export default function FormInput({ label, type, placeholder, onChange, validationRegex }) {
+
   const [error, setError] = React.useState(false);
  
   const onInputChange = (value) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import CartContext from './Context/CartContext/CartContext';
+import CartContext from './Context/CartContext';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";

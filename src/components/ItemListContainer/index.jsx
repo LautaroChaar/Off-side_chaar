@@ -1,6 +1,6 @@
 import './ItemListContainer.css';
 import * as React from 'react';
-import ItemList from '../ItemList/ItemList';
+import ItemList from '../ItemList';
 import { useEffect, useState } from 'react';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
@@ -12,7 +12,6 @@ export default function ItemListContainer({ greeting }) {
 	const [loading, setLoading] = useState (true);
 	
 	useEffect (() => {
-
 		const db = getFirestore();
 		let collectionRef;
 
@@ -34,10 +33,10 @@ export default function ItemListContainer({ greeting }) {
 				<p>...</p> 
 				: 
 				<> 
-				<h1>{greeting}</h1>
-				<section className='itemListContainer'>
-					<ItemList productList={productList} />
-				</section>
+					<h1>{greeting}</h1>
+					<section className='itemListContainer'>
+						<ItemList productList={productList} />
+					</section>
 				</>
 			}
 		</div>

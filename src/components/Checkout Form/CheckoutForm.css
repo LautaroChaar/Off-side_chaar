@@ -17,11 +17,11 @@
     margin: 12px;
 }
 
-.orderForm div label, .orderForm div input {
+.orderForm label, .orderForm input {
     font-size: 1.5rem;
 }
 
-.orderForm div input {
+.orderForm input {
     border: none;
     border-bottom: 2px solid rgb(129, 46, 122);
     text-align: center;
@@ -29,11 +29,11 @@
     color: antiquewhite;
 }
 
-.orderForm div input:focus {
+.orderForm input:focus {
     outline: none;
 }
 
-.orderForm div label {
+.orderForm label {
     margin: 6px;
 }
 

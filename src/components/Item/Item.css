@@ -1,12 +1,18 @@
 .item {
-    border: 4px solid rgb(135, 207, 125);
-    width: 200px;
+    border: 4px solid #FFF;
+    width: 250px;
+    height: 356px;
     display: flex;
     flex-direction: column;
     margin: 10px;
-    background-color: rgb(0, 0, 0);
+    
     box-shadow: rgb(0 0 0) 0px 3px 8px;
     
+}
+
+.cardItem, .bgItem {
+    height: 100%;
+    background-color: #1A1C1C;
 }
 
 .itemLink{
@@ -14,27 +20,29 @@
     color: #b7b7b79a;
 }
 
-.bgItem {
-    background-color: rgb(0, 0, 0);
-}
-
-.title {
-    color: #b7b7b7;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin: 4px;
+.bgItem div {
+    height: 180px;
+    display: flex;
+    justify-content: center;
 }
 
 .category {
-    color: #66467f;
+    color: #b7b7b7;
+    font-size: 1.2rem;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.title {
+    color: #78546a;
     font-size: 1rem;
     margin: 4px;
 }
 
 .img {
-    border-radius: 125px;
     padding: 12px;
-    width: 120px;
+    
+    
 }
 
 .price {
@@ -44,6 +52,5 @@
 }
 
 .cardActionBg {
-    background-color: rgb(0, 0, 0);
     justify-content: center;
 }

@@ -1,22 +1,18 @@
 import React from "react";
-import { cartContext } from "../../Context/CartContext/CartContext";
+import { cartContext } from "../../Context/CartContext";
 import { useContext } from "react";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
-import "./Form.css";
-import FormInput from "../FormInput/Forminput";
+import "./CheckoutForm.css";
+import FormInput from "../FormInput";
  
-export default function Form() {
+export default function CheckoutForm() {
+
   const { cart, totalToPay, clear } = useContext(cartContext);
- 
   const [buyerName, setBuyerName] = React.useState("");
   const [phoneNumber, setPhoneNumber] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [orderId, setOrderId] = React.useState("");
- 
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
- 
+
   function handleClickOrder() {
     const order = {
       buyer: { buyerName, phoneNumber, email },
@@ -30,7 +26,7 @@ export default function Form() {
   }
  
   const validateForm = () => {
-    if (buyerName !== "" && phoneNumber !== "" && email !== "") {
+    if (buyerName !== "" && phoneNumber !== "" && email !== "" && cart !== []) {
       handleClickOrder();
     } else {
       alert("Por favor, complete el formulario.");
@@ -42,8 +38,9 @@ export default function Form() {
       <h2 className="orderTitle">
         Complete el formulario para realizar su pedido
       </h2>
-      <form className="orderForm" onSubmit={handleSubmit}>
+      <form className="orderForm" >
         <FormInput
+          className="formInput"
           label="Nombre y Apellido"
           type="text"
           placeholder="Nombre Apellido"
@@ -51,6 +48,7 @@ export default function Form() {
           validationRegex={/^[A-z ]+$/}
         />
         <FormInput
+          className="formInput"
           label="Número de Teléfono"
           type="tel"
           placeholder="xxxxxxxxxx"
@@ -58,6 +56,7 @@ export default function Form() {
           validationRegex={/^\d{8,12}$/}
         />
         <FormInput
+          className="formInput"
           label="Email"
           type="email"
           placeholder="Example@example.com"

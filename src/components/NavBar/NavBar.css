@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
 .brand, .categoryName  {
-    color: #17181a;
+    font-family: 'Roboto';
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #78546a;
     text-decoration: none;
 }
