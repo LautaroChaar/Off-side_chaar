@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import CartWidget from '../CartWidget';
 import { Link } from 'react-router-dom';
 import './NavBar.css'
@@ -27,10 +26,14 @@ export default function Navbar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor:'#070706'}}>
+    <AppBar position="static" sx={{ backgroundColor:'#1A1C1C'}}>
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
-          <SportsSoccerIcon sx={{ display: { xs: 'none', md: 'flex', color: '#78546a' }}} />
+          <Box className='buttonLogoContainer'>
+            <Button>
+              <Link to={'/'} ><img className='logo' src='https://i.postimg.cc/VNHnMqLS/logo.png' alt='logo'/></Link>
+            </Button>
+          </Box>
           <Typography 
             variant="h5"
             noWrap
@@ -43,7 +46,7 @@ export default function Navbar() {
               textDecoration: 'none',
             }}
           >
-            <Link className='brand' to= {"/"} >FF-SIDE</Link>
+            <Link className='brand' to= {"/"} >ff-side</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -54,7 +57,7 @@ export default function Navbar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon sx={{ color: '#17181a' }} />
+              <MenuIcon sx={{ color: '#78546a' }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -76,13 +79,16 @@ export default function Navbar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link className='categoryMenu' to={`/category/${page}`}>{page}</Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <img src="../../logo.png" alt="" />
-          <SportsSoccerIcon sx={{ display: { xs: 'flex', md: 'none', color: '#6b3958' }}} />
+          <Box className='buttonLogo2Container'>
+            <Button>
+              <Link to={'/'} ><img className='logo2' src='https://i.postimg.cc/VNHnMqLS/logo.png' alt='logo' /></Link>
+            </Button>
+          </Box>
           <Typography
             variant="h5"
             noWrap
@@ -96,7 +102,7 @@ export default function Navbar() {
               textDecoration: 'none',
             }}
           >
-            <Link className='brand' to= {"/"} >FF-SIDE</Link>
+            <Link className='brand' to= {"/"} >ff-side</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'space-evenly' } }}>
             {pages.map((page) => (

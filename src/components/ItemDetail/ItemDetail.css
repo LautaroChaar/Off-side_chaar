@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
 .itemDetail {
     border: 4px solid #FFF;
-    width: 250px;
+    width: 60%;
     display: flex;
     flex-direction: column;
     margin: 10px;
-    
     box-shadow: rgb(0 0 0) 0px 3px 8px;
     
 }
@@ -14,7 +15,10 @@
     background-color: #1A1C1C;
 }
 
-.itemDetailBg {
+.itemDetailContent {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: #1A1C1C;
 }
 
@@ -26,15 +30,9 @@
 }
 
 .itemDetailTitle {
-    color: #78546a;
+    color: #FFF2E6;
     font-size: 1rem;
     margin: 4px;
-}
-
-.itemDetaiImg {
-    padding: 12px;
-    width: 120px;
-    
 }
 
 .itemDetailPrice {
@@ -43,8 +41,33 @@
     margin: 4px;
 }
 
+.itemDetailDescription {
+    color: #FFF2E6;
+    font-family: 'Roboto';
+}
+
+.infoContainer {
+    width: 40%;
+}
+
 .itemDetailCardAction {
     justify-content: center;
-    
     background-color: #1A1C1C;
 }
+
+@media screen and (max-width:899px) {
+    .itemDetailContent {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #1A1C1C;
+    }
+
+    .itemDetaiImg {
+        width: 50%;
+    }
+
+    .infoContainer {
+        width: 80%;
+    }
+} 

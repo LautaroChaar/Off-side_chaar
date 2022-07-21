@@ -45,7 +45,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
               setCount(Math.max(count - 1, 0));
             }}
           >
-            <RemoveIcon fontSize="small" sx={{ color: "#66467f" }} />
+            <RemoveIcon fontSize="small" sx={{ color: "#78546a" }} />
           </Button>
           <p className="numberOfProducts">{count}</p>
           <Button
@@ -57,7 +57,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
               }
             }}
           >
-            <AddIcon fontSize="small" sx={{ color: "#66467f" }} />
+            <AddIcon fontSize="small" sx={{ color: "#78546a" }} />
           </Button>
           <Button
             onClick={() => {
@@ -74,7 +74,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
           >
             <AddShoppingCartIcon
               fontSize="small"
-              sx={{ color: "#66467f" }}
+              sx={{ color: "#78546a" }}
             />
           </Button>
         </div>

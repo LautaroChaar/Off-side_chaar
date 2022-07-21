@@ -14,17 +14,22 @@ export default function ItemDetail({ productDetail }) {
   return (
     <article className='itemDetail'>
 		<Card className='itemDetailCard'>
-			<CardContent className='itemDetailBg'>
-				<h2 className='itemDetailCategory'>{productDetail.category}</h2>
-				<h3 className='itemDetailTitle'>{productDetail.title}</h3>
-				<img className='itemDetaiImg' src={productDetail.image} alt={productDetail.image} />
-				<p className='itemDetailPrice'>${productDetail.price}</p>
+			<CardContent className='itemDetailContent'>
+				<div>
+					<img className='itemDetaiImg' src={productDetail.image} alt={productDetail.image}/>
+				</div>
+				<div className='infoContainer'>
+					<h2 className='itemDetailCategory'>{productDetail.category}</h2>
+					<h3 className='itemDetailTitle'>{productDetail.title}</h3>
+					<p className='itemDetailDescription'>{productDetail.description}</p>
+					<h4 className='itemDetailPrice'>${productDetail.price}</h4>
+					<CardActions className='itemDetailCardAction'>
+						<ItemCount stock= {productDetail.stock} initial= {productDetail.initial} onAdd={onAdd} productDetail={productDetail} ></ItemCount>
+					</CardActions>
+				</div>
 			</CardContent>
-			<CardActions className='itemDetailCardAction'>
-				<ItemCount stock= {productDetail.stock} initial= {productDetail.initial} onAdd={onAdd} productDetail={productDetail} ></ItemCount>
-			</CardActions>
 		</Card>
-		</article>
+	</article>
   )
 }
 
