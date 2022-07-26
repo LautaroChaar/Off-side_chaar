@@ -3,18 +3,15 @@ import './App.css';
 import Cart from './components/Cart';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
-import Navbar from './components/NavBar';
 import CheckoutForm from './components/Checkout Form';
-
+import Layout from "./components/Layout";
 
 function App() {
 
   return (
     <div className="App">
       <BrowserRouter>
-        <header className="App-header">
-          <Navbar></Navbar>
-        </header>
+        <Layout>
         <Routes>
           <Route path="/" element={<ItemListContainer greeting="Bienvenido a Off-side, siempre un paso adelante!" />} />
           <Route path="/category/:category" element={<ItemListContainer greeting="Bienvenido a Off-side, siempre un paso adelante!" />} />
@@ -22,9 +19,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckoutForm />}/>
         </Routes>
-        <footer>
-          Footer
-        </footer>
+        </Layout>
       </BrowserRouter>      
     </div>
   );

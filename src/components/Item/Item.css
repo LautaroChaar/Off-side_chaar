@@ -1,17 +1,11 @@
 .item {
     border: 4px solid #FFF;
     width: 250px;
-    height: 356px;
-    display: flex;
-    flex-direction: column;
     margin: 10px;
-    
     box-shadow: rgb(0 0 0) 0px 3px 8px;
-    
 }
 
-.cardItem, .bgItem {
-    height: 100%;
+.bgItem {
     background-color: #1A1C1C;
 }
 
@@ -19,6 +13,8 @@
     text-decoration: none;
     color: #b7b7b79a;
 }
+
+
 
 .bgItem div {
     height: 180px;
