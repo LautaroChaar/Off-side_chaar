@@ -2,6 +2,9 @@ import React from "react";
 import { cartContext } from "../../Context/CartContext";
 import { useContext } from "react";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
+import { Link } from 'react-router-dom';
+import Button from "@mui/material/Button";
+import Swal from 'sweetalert2';
 import "./CheckoutForm.css";
 import FormInput from "../FormInput";
  
@@ -11,30 +14,48 @@ export default function CheckoutForm() {
   const [buyerName, setBuyerName] = React.useState("");
   const [phoneNumber, setPhoneNumber] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [orderId, setOrderId] = React.useState("");
 
   function handleClickOrder() {
     const order = {
       buyer: { buyerName, phoneNumber, email },
-      cart: cart,
+      cart,
       price: totalToPay,
     };
     const db = getFirestore();
     const ordersRef = collection(db, "orders");
-    addDoc(ordersRef, order).then(({ id }) => setOrderId(id));
+    addDoc(ordersRef, order);
     clear();
   }
  
+  const validateFormConditions = buyerName !== "" && phoneNumber !== "" && email !== "" && cart.length >= 1;
+
   const validateForm = () => {
-    if (buyerName !== "" && phoneNumber !== "" && email !== "" && cart !== []) {
+    if (validateFormConditions) {
       handleClickOrder();
+      Swal.fire({
+        icon:'success',
+        title: 'Listo',
+        text: `Su pedido ha sido realizado con exito!`,
+        background: '#111111',
+        color: '#b7b7b7',
+        confirmButtonColor: '#4e4e4e',
+        confirmButtonText: 'Cerrar'
+      });
     } else {
-      alert("Por favor, complete el formulario.");
+      Swal.fire({
+        icon:'error',
+        title: 'Algo ha ocurrido!',
+        text: `No fue posible realizar la compra.`,
+        background: '#111111',
+        color: '#b7b7b7',
+        confirmButtonColor: '#4e4e4e',
+        confirmButtonText: 'Cerrar'
+      });
     }
   };
  
   return (
-    <>
+    <div className="formContainer">
       <h2 className="orderTitle">
         Complete el formulario para realizar su pedido
       </h2>
@@ -66,12 +87,11 @@ export default function CheckoutForm() {
           }
         />
         <div>
-          <button type="submit" onClick={validateForm}>
-            Solicitar Pedido
-          </button>
+          <Button type="button" onClick={validateForm}>
+            { validateFormConditions ? <Link className="checkoutLink" to={'/'}>Solicitar Pedido</Link> : <Link className="checkoutLink" to={''}>Solicitar Pedido</Link> }
+          </Button>
         </div>
       </form>
-      <p>Su id de compra es: {orderId}</p>
-    </>
+    </div>
   );
 }

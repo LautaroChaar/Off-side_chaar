@@ -1,4 +1,24 @@
 .itemDetailContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 351.61px);
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .itemDetailContainer {
+        min-height: calc(100vh - 242px);
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 899px) {
+    .itemDetailContainer {
+        min-height: calc(100vh - 266.39px);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .itemDetailContainer {
+        min-height: calc(100vh - 280.39px);
+    }
 }

@@ -1,11 +1,21 @@
+.formContainer {
+    margin: 20px;
+    min-height: calc(100vh - 351.61px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
 .orderTitle {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .orderForm {
     margin: 0 auto;
-    border: 4px solid white;
-    width: fit-content;
+    width: 80%;
+    max-width: 260px;
+    background-color: #282828;
     padding: 16px;
 }
 
@@ -18,15 +28,15 @@
 }
 
 .orderForm label, .orderForm input {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .orderForm input {
     border: none;
-    border-bottom: 2px solid rgb(129, 46, 122);
+    border-bottom: 2px solid #78546a;
     text-align: center;
     background: none;
-    color: antiquewhite;
+    color: #b7b7b7;
 }
 
 .orderForm input:focus {
@@ -35,13 +45,91 @@
 
 .orderForm label {
     margin: 6px;
+    color: #78546a;
+    font-weight: bold;
 }
 
 .orderForm div button {
-    font-size: 1.5rem;
     border: none;
     background: none;
     margin-top: 20px;
-    color: antiquewhite;
+    color: #b7b7b7;
     cursor: pointer;
+}
+
+.orderForm div button:hover .checkoutLink {
+    color: rgb(93, 128, 93);
+}
+
+.buyIdSpan {
+    color: #78546a;
+}
+
+.checkoutLink {
+    color: #b7b7b7;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .formContainer {
+        min-height: calc(100vh - 242px);
+    }
+    .orderTitle {
+        font-size: 1.4rem;
+    }
+    .orderForm {
+        max-width: 310px;
+    }
+    .orderForm label, .orderForm input {
+        font-size: 1.2rem;
+    }
+    .orderForm label {
+       font-size: 1.2rem;
+    }
+    .checkoutLink {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 998px) {
+    .formContainer {
+        min-height: calc(100vh - 266.39px);
+    }
+    .orderTitle {
+        font-size: 1.6rem;
+    }
+    .orderForm {
+        max-width: 310px;
+    }
+    .orderForm label, .orderForm input {
+        font-size: 1.2rem;
+    }
+    .orderForm label {
+       font-size: 1.2rem;
+    }
+    .checkoutLink {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 999px) {
+    .formContainer {
+        min-height: calc(100vh - 280.39px);
+    }
+    .orderTitle {
+        font-size: 1.6rem;
+    }
+    .orderForm {
+        max-width: 310px;
+    }
+    .orderForm label, .orderForm input {
+        font-size: 1.2rem;
+    }
+    .orderForm label {
+       font-size: 1.2rem;
+    }
+    .checkoutLink {
+        font-size: 1.4rem;
+    }
 }

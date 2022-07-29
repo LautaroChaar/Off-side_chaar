@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     margin: 20px;
-    min-height: 100vh;
+    min-height: calc(100vh - 351.61px);
 }
 
 .cartSection {
@@ -15,7 +15,15 @@
     width: 80%;
     background-color: #282828;
     padding: 12px;
-    border-radius: 16px;
+    border-radius: 8px;
+}
+
+.cartSection h1 {
+    font-size: 1rem;
+}
+
+.cartSection .h2 {
+    font-size: 1rem;
 }
 
 .table {
@@ -23,12 +31,43 @@
 }
 
 .tableRowHead h2 {
-    font-size: 1.2rem;
-    color: #8d759f;
+    font-size: .8rem;
+    color: #78546a;
 }
 
 .tableRow {
+    font-size: .6rem;
     font-weight: bold;
+}
+
+
+
+.categoryProduct {
+    display: none;
+}
+
+.unitPriceProduct {
+    display: none;
+}
+
+.cartImgProducts {
+    display: none;
+}
+
+.totalPrice {
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.emptyCartBtnLink {
+    font-size: .8rem;
+    color: #9f7575;
+}
+
+.cartSectionLink {
+    font-size: .8rem;
+    text-decoration: none;
+    color: #b7b7b7;
 }
 
 .cartProduct {
@@ -39,66 +78,17 @@
     justify-content: space-evenly;
 }
 
-.cartImgProducts {
-    border-radius: 125px;
-    padding: 12px;
-    width: 40px;
-}
 
-.totalPrice {
-    font-size: 1.5rem;
-    width: 50%;
-}
-
-.pp {
-    color: #9f7575;
-    font-size: 1.2rem;
-}
 
 .cartSectionButton {
     width: fit-content;
 }
 
-.cartSectionLink {
-    text-decoration: none;
-    color: #8d759f;
-    font-size: 1.2rem;
+.cartSectionButton:hover .cartSectionLink {
+    color: #78546a;
 }
 
-@media screen and (min-width: 648px) and (max-width:899px) {
-    
-    .cartSection h1 {
-        font-size: 1.2rem;
-    }
 
-    .cartSection .h2 {
-        font-size: 1.2rem;
-    }
-    
-    .tableRowHead h2 {
-        font-size: 1rem;
-    }
-    
-    .tableRow {
-        font-size: .8rem;
-    }
-    
-    .cartImgProducts {
-        width: 30px;
-    }
-    
-    .totalPrice {
-        font-size: 1.2rem;
-    }
-    
-    .pp {
-        font-size: 1rem;
-    }
-    
-    .cartSectionLink {
-        font-size: 1rem;
-    }
-}
 
 @media screen and (max-width: 647px) {
 
@@ -135,7 +125,7 @@
         min-width: 200px;
     }
     
-    .pp {
+    .emptyCartBtnLink {
         font-size: .8rem;
     }
     
@@ -144,3 +134,96 @@
     }
 
 }
+
+@media screen and (min-width: 648px) and (max-width:899px) {
+    
+    
+}
+
+@media screen and (min-width: 600px) and (max-width:899px) {
+    .cartContainer {
+        min-height: calc(100vh - 242px);
+    }
+    .cartSection h1 {
+        font-size: 1.2rem;
+    }
+
+    .cartSection .h2 {
+        font-size: 1.2rem;
+    }
+    
+    .tableRowHead h2 {
+        font-size: 1rem;
+    }
+    
+    .tableRow {
+        font-size: .8rem;
+    }
+    
+    .cartImgProducts {
+        display: block;
+        width: 30px;
+    }
+    
+    .totalPrice {
+        font-size: 1.2rem;
+    }
+    
+    .emptyCartBtnLink {
+        font-size: 1rem;
+    }
+    
+    .cartSectionLink {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .cartSection h1 {
+        font-size: 1.2rem;
+    }
+    .cartSection .h2 {
+        font-size: 1.2rem;
+    }
+    .tableRowHead h2 {
+    font-size: 1.2rem;
+    color: #78546a;
+    }
+    .tableRow {
+        font-weight: bold;
+        font-size: .9rem;
+    } 
+    .cartImgProducts {
+        display: block;
+        border-radius: 125px;
+        padding: 12px;
+        width: 40px;
+    } 
+    .totalPrice {
+        font-size: 1.5rem;
+        width: 50%;
+    } 
+    .emptyCartBtnLink {
+        color: #9f7575;
+        font-size: 1.2rem;
+    } 
+    .cartSectionLink {
+        text-decoration: none;
+        color: #b7b7b7;
+        font-size: 1.2rem;
+    } 
+}
+
+@media screen and (min-width: 900px) and (max-width:998px) {
+    .cartContainer {
+        min-height: calc(100vh - 266.39px);
+    }
+}
+
+@media screen and (min-width: 999px) {
+    .cartContainer {
+        min-height: calc(100vh - 280.39px);
+    }
+}
+
+

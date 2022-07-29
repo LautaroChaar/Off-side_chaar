@@ -2,13 +2,22 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import * as React from 'react';
+import Swal from 'sweetalert2';
 import ItemCount from '../ItemCount';
 import './ItemDetail.css';
 
 export default function ItemDetail({ productDetail }) {
 
 	const onAdd = (initial) => {
-		alert(`Agregaste ${initial} producto/s al carrito de compra.`)
+		Swal.fire({
+			icon:'success',
+			title: 'Listo',
+			text: `Agregaste ${initial} producto/s al carrito de compra.`,
+			background: '#111111',
+			color: '#b7b7b7',
+			confirmButtonColor: '#4e4e4e',
+			confirmButtonText: 'Cerrar'
+		})
 	};
 
   return (
@@ -36,7 +45,6 @@ export default function ItemDetail({ productDetail }) {
 			</CardContent>
 		</Card>
 	</article>
-   
   )
 }
 

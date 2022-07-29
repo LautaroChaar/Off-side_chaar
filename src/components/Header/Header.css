@@ -1,7 +1,7 @@
 .appHeader {
     display: flex;
     flex-direction: column;
-    font-size: calc(10px + 2vmin);
+    
 }
 
 .slogan {
@@ -12,4 +12,11 @@
     font-size: 1.5rem;
     border-top: 2px solid #b7b7b7;
     border-bottom: 2px solid #b7b7b7;
+    font-size: 1rem
+}
+
+@media screen and (min-width: 900px) {
+    .slogan {
+        font-size: 1.4rem;
+    }
 }

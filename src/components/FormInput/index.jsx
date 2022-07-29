@@ -1,4 +1,5 @@
 import React from "react";
+import './FormInput.css';
  
 export default function FormInput({ label, type, placeholder, onChange, validationRegex }) {
 
@@ -22,7 +23,8 @@ export default function FormInput({ label, type, placeholder, onChange, validati
         required
         onChange={(e) => onInputChange(e.target.value)}
       />
-      {error && <p>Por favor, complete el campo correctamente.</p>}
+      {error && <p className="invalidForm">Campo inválido.</p>}
     </div>
   );
 }
+

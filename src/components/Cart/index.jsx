@@ -15,15 +15,15 @@ export default function Cart() {
   ? 
   <div className='cartContainer'>
     <section className='cartSection'>
-      <h1>Carrito</h1>
+      <h1>CARRITO</h1>
       <h2 className='h2'>No hay productos agregados al carrito.</h2>
-      <Button className='cartSectionButton' color="secondary" ><Link className='cartSectionLink' to= "/">Ir a comprar</Link></Button>
+      <Button className='cartSectionButton' color='secondary' sx={{'&:hover': { backgroundColor: 'transparent'}}} ><Link className='cartSectionLink' to= "/">Ir a comprar</Link></Button>
     </section>
   </div> 
   : 
   <div className='cartContainer'>
     <section className='cartSection'>
-      <h1>Carrito</h1>
+      <h1>CARRITO</h1>
       <table className='table'>
         <thead className='tableRowHead'>
           <tr>
@@ -59,8 +59,8 @@ export default function Cart() {
     <div className='totalPrice'>
       <h3>Total a pagar: $ {totalToPay} </h3>
       <ButtonGroup>
-        <Button variant="text" color="secondary" className='cartSectionButton'><Link className='cartSectionLink' to= "/form">FINALIZAR COMPRA</Link></Button>
-        <Button variant="text" color="error" className='pp' onClick={() => clear()}><p className='pp'>VACIAR CARRITO</p></Button>
+        <Button variant="text" color="secondary" className='cartSectionButton'><Link className='cartSectionLink' to= "/checkout">FINALIZAR COMPRA</Link></Button>
+        <Button variant="text" color='error' className='emptyCartBtn' onClick={() => clear()}><p className='emptyCartBtnLink'>VACIAR CARRITO</p></Button>
       </ButtonGroup>
     </div>
   </div>
