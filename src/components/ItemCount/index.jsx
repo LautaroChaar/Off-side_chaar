@@ -21,7 +21,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
     <Link className="buyBtn" to={"/cart"}>Comprar</Link>  
   </Button>
   :
-  <Button variant="text" onClick={() => {
+  <Button className="buyBtn" variant="contained" sx={{ backgroundColor: "#2e2e2e", boxShadow: 'none', width: '100%', '&:hover': { backgroundColor: 'transparent', boxShadow: 'none'} }} onClick={() => {
     const totalQuantity = prevAddedQuantity + count;
       if (totalQuantity <= stock && count !== 0) {
         initial += count;
@@ -31,7 +31,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
         setCount(0);
       }
     }}>
-    <Link className="buyBtn" to={"/cart"}>Comprar</Link>
+    <Link className="buyBtnLink" to={"/cart"}>Comprar</Link>
   </Button>;
 
   return (
@@ -39,16 +39,21 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
       <ButtonGroup className="btnGroup">
         <div className="addCartbtn">
           <Button
+            className="btnRemove"
             variant="text"
             aria-label="reduce"
             onClick={() => {
               setCount(Math.max(count - 1, 0));
             }}
           >
-            <RemoveIcon fontSize="small" sx={{ color: "#78546a" }} />
+            <RemoveIcon 
+            className="removeIcon"
+            fontSize="small" 
+            sx={{ color: "#b7b7b7" }} />
           </Button>
           <p className="numberOfProducts">{count}</p>
           <Button
+            className="btnAdd"
             variant="text"
             aria-label="increase"
             onClick={() => {
@@ -57,9 +62,13 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
               }
             }}
           >
-            <AddIcon fontSize="small" sx={{ color: "#78546a" }} />
+            <AddIcon 
+            className="addIcon"
+            fontSize="small" 
+            sx={{ color: "#b7b7b7" }} />
           </Button>
           <Button
+            className="btnAddCart"
             onClick={() => {
               const totalQuantity = prevAddedQuantity + count;
               if (totalQuantity <= stock && count !== 0) {
@@ -73,8 +82,9 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
             variant="text"
           >
             <AddShoppingCartIcon
+              className="addCartIcon"
               fontSize="small"
-              sx={{ color: "#78546a" }}
+              sx={{ color: "#b7b7b7" }}
             />
           </Button>
         </div>

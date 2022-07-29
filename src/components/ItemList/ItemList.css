@@ -3,5 +3,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 906px;
+    max-width: 750px;
+    gap: 26px;
 }

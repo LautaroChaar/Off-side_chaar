@@ -9,15 +9,17 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import Item from '../Item';
+import ItemCarousel from '../ItemCarousel';
+import './Carousel.css';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export default function Carousel({ productList }) {
-
+ 
+  const bestSellers = productList.filter( item => item.bestsellers === true);
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = productList.length;
+  const maxSteps = bestSellers.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -33,7 +35,7 @@ export default function Carousel({ productList }) {
 
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <Box className='carouselContainer' sx={{ flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
@@ -45,31 +47,32 @@ export default function Carousel({ productList }) {
           bgcolor: 'transparent',
         }}
       ><Typography 
+      className='bestSellersText'
       sx={{
-        fontSize: '2rem',
         fontWeight: 'bold',
-				width: '100%'
+				width: '100%',
+        fontSize: '1.2rem'
       }}
       >Productos + vendidos
       </Typography>
       </Paper>
-      <SwipeableViews
+      <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {productList.map((item, index) => (
-          <div key={item.id} className='itemList' >
+        {bestSellers.map((item, index) => (
+          <div key={item.id} className='itemLista' >
             {Math.abs(activeStep - index) <= 2 ? (
-            <Item id={item.id} title={item.title} category={item.category} image={item.image} price={item.price} stock={item.stock} initial={item.initial} />
+            <ItemCarousel id={item.id} title={item.title} category={item.category} image={item.image} price={item.price} stock={item.stock} initial={item.initial} />
           ) : null}
           </div>
         ))}
-      </SwipeableViews >
+      </AutoPlaySwipeableViews >
       <MobileStepper
         sx={{
-          bgcolor: 'transparent',
+          bgcolor: 'transparent'
         }}
         className='stepperStyle'
         steps={maxSteps}
@@ -80,6 +83,7 @@ export default function Carousel({ productList }) {
             size="small"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
+            sx={{color:'#b7b7b7'}}
           >
             {theme.direction === 'rtl' ? (
               <KeyboardArrowLeft />
@@ -89,7 +93,7 @@ export default function Carousel({ productList }) {
           </Button>
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0} sx={{color:'#b7b7b7'}} >
             {theme.direction === 'rtl' ? (
               <KeyboardArrowRight />
             ) : (

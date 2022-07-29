@@ -12,7 +12,24 @@
     display: flex;
 }
 
-.buyBtn {
+.buyBtnLink {
     text-decoration: none;
+    font-weight: bold;
+    color: #b7b7b7;
+}
+
+.buyBtn:hover .buyBtnLink {
+    color: #78546a;
+}
+
+.btnRemove:hover .removeIcon {
+    color: #78546a;
+}
+
+.btnAdd:hover .addIcon {
+    color: #78546a;
+}
+
+.btnAddCart:hover .addCartIcon {
     color: #78546a;
 }

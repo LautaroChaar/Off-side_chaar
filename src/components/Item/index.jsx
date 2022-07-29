@@ -5,20 +5,22 @@ import Button from "@mui/material/Button";
 import './Item.css';
 import { Link } from 'react-router-dom';
 
-export default function Item({ id, title, category, image, price}) {
-
+export default function Item({ id, title, category, image, price, stock }) {
 
   return (
     <article className='item'>
 			<Card className='cardItem'>
 				<CardContent className='bgItem'>
-					<h2 className='category'>{category}</h2>
-					<h3 className='title'>{title}</h3>
-					<div>
+					<div className='itemImgContainer'>
 						<img className='img' src={image} alt={image} />
 					</div>
-					<p className='price'>${price}</p>
-					<Button variant="contained" sx={{ backgroundColor: "#2e2e2e", marginTop: '14px' }} className='buttonDetail'>
+					<div className='infoItem'>
+						<h2 className='title'>{title}</h2>
+						<h3 className='category'>Categoria : {category}</h3>
+						<p className='stock'>Stock : {stock}</p>
+						<p className='price'>Precio : <span>${price}</span></p>
+					</div>
+					<Button variant="contained" sx={{ backgroundColor: "#2e2e2e", marginTop: '14px', boxShadow: 'none', width: '100%', '&:hover': { backgroundColor: 'transparent', boxShadow: 'none'} }} >
 						<Link className='itemLink' to={`/product/${id}`}>VER DETALLE</Link>
 					</Button>
 				</CardContent>

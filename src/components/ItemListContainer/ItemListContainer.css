@@ -1,15 +1,10 @@
-.boxListContainer {
+.listContainer {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.itemListContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 30px;
 }
 
 .div2 {
@@ -17,7 +12,7 @@
 }
 
 @media screen and (min-width:1275px) {
-    .productsContainer {
+    .listContainer {
         display: flex;
         flex-direction: row;
         justify-content: center;

@@ -3,9 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 200px);
-    
-    
+    margin: 20px;
+    min-height: 100vh;
 }
 
 .cartSection {
@@ -14,7 +13,7 @@
     justify-content: center;
     align-items: center;
     width: 80%;
-    background-color: #2e2e2e;
+    background-color: #282828;
     padding: 12px;
     border-radius: 16px;
 }
