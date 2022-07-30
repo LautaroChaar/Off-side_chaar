@@ -41,12 +41,12 @@ export default function Footer() {
 						alignItems: 'center',
 						gap: '10px'
 					}}>
-						<Link to={"/https://github.com/LautaroChaar"} rel="noreferrer" target="_blank" ><GitHubIcon sx={{display: 'block', color: '#dddca8', '&:hover': {color: '#fff'}}} /></Link>
-						<Link to={"/https://www.instagram.com/lautichaar"} rel="noreferrer" target="_blank" ><InstagramIcon sx={{display: 'block',  color: '#dddca8', '&:hover': {color: '#fff'}}} /></Link>
+						<GitHubIcon sx={{ cursor: 'pointer', display: 'block', color: '#dddca8', '&:hover': {color: '#fff'}}} />
+						<InstagramIcon sx={{ cursor: 'pointer', display: 'block',  color: '#dddca8', '&:hover': {color: '#fff'}}} />
 					</Box>
     		</Grid>
     	</Grid>
-    </Box>
+    	</Box>
 	</footer>
   )
 }
