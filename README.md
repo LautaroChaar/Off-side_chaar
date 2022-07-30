@@ -4,11 +4,11 @@ Proyecto e-commerce realizado para el curso de React Js de Coderhouse
 
 # Tecnologias aplicadas :
 
-<h2>React</h2>
-<h2>React Router</h2>
-<h2>CSS</h2>
-<h2>Firebase</h2>
-<h2>SweetAlert</h2>
+<p>React</p>
+<p>React Router</p>
+<p>CSS</p>
+<p>Firebase</p>
+<p>SweetAlert</p>
 
 # Instalación
 ## Clonar repositorio
