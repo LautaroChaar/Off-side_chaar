@@ -4,6 +4,7 @@ import ItemList from '../ItemList';
 import Carousel from '../Carousel';
 import Loading from '../Loading';
 import { useEffect, useState } from 'react';
+import { Box } from '@mui/material';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 
@@ -31,21 +32,28 @@ export default function ItemListContainer() {
 	}, [category]);
 
   return (
-		<div>
+		<Box>
 			{ loading 
 				? 
 				<Loading />
 				:  
-				<div className='listContainer' >
-					<section className='bestSellerContainer'>
+				<Box 
+				sx={{
+					padding: '20px',
+    				display: 'flex',
+    				justifyContent: 'center',
+    				alignItems: 'center',
+    				gap: '30px'
+				}} className='listContainer' >
+					<Box component='section' >
 						<Carousel productList={productList} />
-					</section>
-					<section className='itemListContainer'>
+					</Box>
+					<Box component='section' >
 						<ItemList productList={productList} />
-					</section>
-				</div>
+					</Box>
+				</Box>
 			}
-		</div>
+		</Box>
   );
 }
 

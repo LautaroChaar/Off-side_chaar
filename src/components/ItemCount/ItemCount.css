@@ -1,17 +1,3 @@
-.numberOfProducts {
-    margin: 12px;
-    color: #b7b7b7;
-}
-
-.btnGroup {
-    display: flex;
-    flex-direction: column;
-}
-
-.addCartbtn {
-    display: flex;
-}
-
 .buyBtnLink {
     text-decoration: none;
     font-weight: bold;

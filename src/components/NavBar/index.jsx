@@ -75,6 +75,35 @@ export default function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
+                
+                '& .MuiPaper-root': {
+                  height: '100vh',
+                  width: '40vw',
+                  backgroundColor: '#282828',
+                  boxShadow: 'none',
+                  left: '0px !important',
+                  top: '62px !important'
+                  
+                  
+                },
+                '& .MuiList-root': {
+                  height: '100%',
+                  padding: '0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-evenly'
+                  
+                  
+                },
+                '& .MuiMenuItem-root': {
+                  fontSize: { xs: '1rem', sm: '1.4rem'},
+                  fontWeight: 'bold',
+                  textTransform: 'uppercase'
+                  
+                  
+                  
+                  
+                }
               }}
             >
               {pages.map((page) => (

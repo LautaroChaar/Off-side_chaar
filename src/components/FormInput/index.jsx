@@ -16,8 +16,9 @@ export default function FormInput({ label, type, placeholder, onChange, validati
  
   return (
     <div>
-      <label>{label}</label>
+      <label className="formLabel">{label}</label>
       <input
+        className="formInput"
         type={type}
         placeholder={placeholder}
         required

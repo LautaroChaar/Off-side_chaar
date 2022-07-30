@@ -3,6 +3,7 @@ import { cartContext } from "../../Context/CartContext";
 import { useContext } from "react";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
+import { Typography, Box } from '@mui/material';
 import Button from "@mui/material/Button";
 import Swal from 'sweetalert2';
 import "./CheckoutForm.css";
@@ -55,13 +56,17 @@ export default function CheckoutForm() {
   };
  
   return (
-    <div className="formContainer">
-      <h2 className="orderTitle">
+    <Box className="formContainer" sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      margin: '20px'
+    }}>
+      <Typography variant="h2" sx={{ fontSize: {xs: '1rem', sm: '1.2rem', md: '1.4rem'}, margin: '10px', fontWeight: 'bold', color: '#fff' }}>
         Complete el formulario para realizar su pedido
-      </h2>
+      </Typography>
       <form className="orderForm" >
         <FormInput
-          className="formInput"
           label="Nombre y Apellido"
           type="text"
           placeholder="Nombre Apellido"
@@ -69,7 +74,6 @@ export default function CheckoutForm() {
           validationRegex={/^[A-z ]+$/}
         />
         <FormInput
-          className="formInput"
           label="Número de Teléfono"
           type="tel"
           placeholder="xxxxxxxxxx"
@@ -77,7 +81,6 @@ export default function CheckoutForm() {
           validationRegex={/^\d{8,12}$/}
         />
         <FormInput
-          className="formInput"
           label="Email"
           type="email"
           placeholder="Example@example.com"
@@ -86,12 +89,21 @@ export default function CheckoutForm() {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           }
         />
-        <div>
-          <Button type="button" onClick={validateForm}>
+        <Box>
+          <Button 
+          sx={{
+            border: 'none',
+            background: 'none',
+            marginTop: '20px',
+            color: '#b7b7b7',
+            '&:hover': { backgroundColor: 'transparent'}
+          }} 
+          className= 'btnForm'
+          type="button" onClick={validateForm}>
             { validateFormConditions ? <Link className="checkoutLink" to={'/'}>Solicitar Pedido</Link> : <Link className="checkoutLink" to={''}>Solicitar Pedido</Link> }
           </Button>
-        </div>
+        </Box>
       </form>
-    </div>
+    </Box>
   );
 }

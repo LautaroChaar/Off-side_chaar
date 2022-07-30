@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import { Link } from 'react-router-dom';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import './Cart.css';
+import { Typography, Box } from '@mui/material';
 
 export default function Cart() {
 
@@ -13,26 +14,56 @@ export default function Cart() {
 
   let totalCartProducts = cart.length === 0 
   ? 
-  <div className='cartContainer'>
-    <section className='cartSection'>
-      <h1>CARRITO</h1>
-      <h2 className='h2'>No hay productos agregados al carrito.</h2>
-      <Button className='cartSectionButton' color='secondary' sx={{'&:hover': { backgroundColor: 'transparent'}}} ><Link className='cartSectionLink' to= "/">Ir a comprar</Link></Button>
-    </section>
-  </div> 
+  <Box className='cartContainer' sx={{
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '20px'
+  }}>
+    <Box component='section' sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '80%',
+      backgroundColor: '#282828',
+      padding: '12px',
+      borderRadius: '8px'
+    }} className='cartSection'>
+      <Typography variant='h2' sx={{  fontSize: { xs: '1rem', sm:'1.2rem', md: '1.4rem'},  fontWeight: 'bold', margin: '10px' }} >CARRITO</Typography>
+      <Typography variant='h3' sx={{ fontSize: { xs: '1rem', sm:'1.2rem', md: '1.4rem'}, fontWeight: 'bold', margin: '10px' }} >No hay productos agregados al carrito.</Typography>
+      <Button color='secondary' className='cartSectionButton' sx={{ width: 'fit-content','&:hover': { backgroundColor: 'transparent'}}} ><Link className='cartSectionLink' to= "/">Ir a comprar</Link></Button>
+    </Box>
+  </Box> 
   : 
-  <div className='cartContainer'>
-    <section className='cartSection'>
-      <h1>CARRITO</h1>
+  <Box className='cartContainer' sx={{
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '20px'
+  }}>
+    <Box component='section' sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '80%',
+      backgroundColor: '#282828',
+      padding: '12px',
+      borderRadius: '8px'
+    }}>
+      <Typography variant='h2' sx={{ fontSize: { xs: '1rem', sm:'1.2rem', md: '1.4rem'}, fontWeight: 'bold', margin: '10px' }} >CARRITO</Typography>
       <table className='table'>
         <thead className='tableRowHead'>
           <tr>
-            <th><h2>Cantidad</h2></th>
+            <th><Typography variant='h3' sx={{ color: '#78546a', fontSize: { xs: '.8rem', md: '1.2rem' }, fontWeight: 'bold'}} >Cantidad</Typography></th>
             <th></th>
-            <th className='categoryProduct'><h2>Categoria</h2></th>
-            <th><h2>Producto</h2></th>
-            <th className='unitPriceProduct'><h2>P/unitario</h2></th>
-            <th><h2>P/total</h2></th>
+            <th className='categoryProduct'><Typography variant='h3' sx={{ color: '#78546a', fontSize: { xs: '.8rem', md: '1.2rem' }, fontWeight: 'bold'}} >Categoria</Typography></th>
+            <th><Typography variant='h3' sx={{ color: '#78546a', fontSize: { xs: '.8rem', md: '1.2rem' }, fontWeight: 'bold'}} >Producto</Typography></th>
+            <th className='unitPriceProduct'><Typography variant='h3' sx={{ color: '#78546a', fontSize: { xs: '.8rem', md: '1.2rem' }, fontWeight: 'bold'}} >P/unitario</Typography></th>
+            <th><Typography variant='h3' sx={{ color: '#78546a', fontSize: { xs: '.8rem', md: '1.2rem' }, fontWeight: 'bold'}} >P/total</Typography></th>
             <th></th>
           </tr>
         </thead>
@@ -55,19 +86,19 @@ export default function Cart() {
           </tbody>
         ))}
       </table>
-    </section>
-    <div className='totalPrice'>
-      <h3>Total a pagar: $ {totalToPay} </h3>
+    </Box>
+    <Box sx={{ minWidth: '200px', width: { md: '50%' } }} >
+      <Typography variant='h4' sx={{ fontSize: {xs: '1rem', sm: '1.2rem', md: '1.5rem' }, fontWeight: 'bold', margin: '10px'}}>Total a pagar : ${totalToPay} </Typography>
       <ButtonGroup>
         <Button variant="text" color="secondary" className='cartSectionButton'><Link className='cartSectionLink' to= "/checkout">FINALIZAR COMPRA</Link></Button>
-        <Button variant="text" color='error' className='emptyCartBtn' onClick={() => clear()}><p className='emptyCartBtnLink'>VACIAR CARRITO</p></Button>
+        <Button variant="text" color='error' onClick={() => clear()}><Typography sx={{fontSize: {xs: '.8rem', sm: '1rem', md: '1.2rem'}, color: '#9f7575', fontWeight: 'bold' }} >VACIAR CARRITO</Typography></Button>
       </ButtonGroup>
-    </div>
-  </div>
+    </Box>
+  </Box>
 
   return (
-    <div>
+    <Box>
       {totalCartProducts}
-    </div>
+    </Box>
   )
 }

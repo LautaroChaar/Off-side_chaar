@@ -2,3 +2,37 @@
     font-size: .8rem;
     color: #a06262;
 }
+
+.formLabel, .formInput {
+    font-size: 1rem;
+}
+
+.formLabel {
+    margin: 6px;
+    color: #78546a;
+    font-weight: bold;
+}
+
+.formInput {
+    border: none;
+    border-bottom: 2px solid #78546a;
+    text-align: center;
+    background: none;
+    color: #fff;
+}
+
+.formInput:focus {
+    outline: none;
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    .formLabel, .formInput {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .formLabel, .formInput {
+        font-size: 1.3rem;
+    }
+}

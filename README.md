@@ -1,5 +1,23 @@
-Bienvenido a Off-side.
+# Off-Side
 
-La mejor tienda de accesorios de futbol donde podras encontrar todo lo que estas buscando y al mejor precio.
+Proyecto e-commerce realizado para el curso de React Js de Coderhouse
 
-Off-side, siempre un paso adelante!
+# Tecnologias aplicadas :
+
+<h2>React</h2>
+<h2>React Router</h2>
+<h2>CSS</h2>
+<h2>Firebase</h2>
+<h2>SweetAlert</h2>
+
+# Instalación
+## Clonar repositorio
+```
+$ git clone https://example.com
+$ cd ../path/to/the/file
+```
+## Instalacion de paquetes e inicialización del proyecto
+```
+$ npm install
+$ npm start
+```

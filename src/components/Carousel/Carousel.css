@@ -1,13 +1,6 @@
-.bestSellersText {
-    color: #fff;
-    
-    margin-bottom: 6px;
-}
-
 .carouselContainer {
     max-width: 214px;
-}
-   
+} 
 
 @media screen and (min-width: 482px) and (max-width: 715px) {
     .carouselContainer {

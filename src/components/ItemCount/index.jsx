@@ -6,6 +6,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import * as React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Typography, Box } from '@mui/material';
 import { cartContext } from "../../Context/CartContext";
 import "./ItemCount.css";
  
@@ -35,9 +36,9 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
   </Button>;
 
   return (
-    <div>
-      <ButtonGroup className="btnGroup">
-        <div className="addCartbtn">
+    <Box>
+      <ButtonGroup sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ display: 'flex'}}>
           <Button
             className="btnRemove"
             variant="text"
@@ -51,7 +52,7 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
             fontSize="small" 
             sx={{ color: "#b7b7b7" }} />
           </Button>
-          <p className="numberOfProducts">{count}</p>
+          <Typography sx={{ margin: '12px', color: '#b7b7b7', fontWeight: 'bold' }}>{count}</Typography>
           <Button
             className="btnAdd"
             variant="text"
@@ -87,9 +88,9 @@ export default function ItemCount({ stock, initial, onAdd, productDetail }) {
               sx={{ color: "#b7b7b7" }}
             />
           </Button>
-        </div>
+        </Box>
         {buyButton}
       </ButtonGroup>
-    </div>
+    </Box>
   );
 }

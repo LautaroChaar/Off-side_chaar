@@ -2,23 +2,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 351.61px);
+    min-height: calc(100vh - 276.28px);
+}
+
+@media screen and (min-width: 390px) and (max-width: 599px) {
+    .itemDetailContainer {
+        min-height: calc(100vh - 258.28px);
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 899px) {
     .itemDetailContainer {
-        min-height: calc(100vh - 242px);
-    }
-}
-
-@media screen and (min-width: 900px) and (max-width: 899px) {
-    .itemDetailContainer {
-        min-height: calc(100vh - 266.39px);
+        min-height: calc(100vh - 224.67px);
     }
 }
 
 @media screen and (min-width: 900px) {
     .itemDetailContainer {
-        min-height: calc(100vh - 280.39px);
+        min-height: calc(100vh - 220.53px);
     }
 }
+

@@ -1,55 +1,10 @@
-.item {
-    border: 4px solid #FFF;
-    height: 320px;
-    width: 200px;
-    box-shadow: rgb(0 0 0) 0px 3px 8px;
-}
-
-.bgItem {
-    background-color: #282828;
-    height: 88%;
-}
-
-.cardItem {
-    height: 100%;
-}
-
 .itemLink{
     text-decoration: none;
     color: #b7b7b79a;
     
 }
 
-.bgItem .itemImgContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.title {
-    color: #FFF2E6;;
-    font-size: 1rem;
-    margin: 0;
-    text-transform: uppercase;
-}
-
 .img {
     padding: 12px;
     height: 120px;    
-}
-
-.category, .stock, .price {
-    color: #b7b7b7;
-    font-weight: bold;
-    font-size: .9rem;
-    margin: 2px;
-}
-
-.price span {
-    font-size: 1.2rem;
-}
-
-.infoItem {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
 }

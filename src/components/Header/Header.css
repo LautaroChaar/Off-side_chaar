@@ -1,22 +1,4 @@
 .appHeader {
     display: flex;
     flex-direction: column;
-    
-}
-
-.slogan {
-    color: #b7b7b7;
-    margin: 0;
-    padding: 8px;
-    background-color: #282828;
-    font-size: 1.5rem;
-    border-top: 2px solid #b7b7b7;
-    border-bottom: 2px solid #b7b7b7;
-    font-size: 1rem
-}
-
-@media screen and (min-width: 900px) {
-    .slogan {
-        font-size: 1.4rem;
-    }
 }

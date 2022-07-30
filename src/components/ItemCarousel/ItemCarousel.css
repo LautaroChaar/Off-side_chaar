@@ -1,58 +1,19 @@
-.itemCarousel {
-    border: 4px solid #FFF;
-    width: 200px;
-    box-shadow: rgb(0 0 0) 0px 3px 8px;
-    }
-
-.bgItemCarousel {
-    background-color: #282828;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    height: 88%;
-}
-
 .itemCarouselLink{
     text-decoration: none;
     color: #b7b7b79a;
 }
 
-.cardItemCarousel {
-    height: 100%;
+.itemCarousel {
+    width: 200px;
 }
 
-.itemCarouselImgContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.titleItemCarousel {
-    color: #FFF2E6;
-    font-size: 1rem;
-    margin: 0;
-    text-transform: uppercase;
+.bgItemCarousel {
+    flex-direction: column;
 }
 
 .imgItemCarousel {
     padding: 12px;
     height: 120px;    
-}
-
-.categoryItemCarousel, .stockItemCarousel, .priceItemCarousel {
-    color: #b7b7b7;
-    font-weight: bold;
-    font-size: .9rem;
-    margin: 2px;
-}
-
-.priceItemCarousel span {
-    font-size: 1.4rem;
-}
-
-.infoItemCarousel {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
 }
 
 @media screen and (min-width: 482px) and (max-width: 715px) {
@@ -89,6 +50,12 @@
     .imgItemCarousel {
         height: 170px;    
     }
+    .categoryItemCarousel, .stockItemCarousel, .priceItemCarousel {
+        font-size: 1rem;
+    }
+    .priceItemCarouselSpan {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (min-width: 1275px) {
@@ -105,58 +72,7 @@
     .imgItemCarousel {
         height: fit-content;   
     }
-    .categoryItemCarousel, .stockItemCarousel, .priceItemCarousel {
-        font-size: 1.2rem;
-    }
-    .priceItemCarousel span {
+    .priceItemCarouselSpan {
         font-size: 1.6rem;
     }
 }
-
-/* .itemCarousel {
-    border: 4px solid #FFF;
-    height: 100%;
-    width: 221px;
-    box-shadow: rgb(0 0 0) 0px 3px 8px;
-    }
-    .bgItemCarousel {
-        background-color: #282828;
-        display: flex;
-        flex-direction: column;
-        justify-content:space-evenly;
-        height: 100%;
-    }
-    .itemCarouselLink{
-        text-decoration: none;
-        color: #b7b7b79a;
-    }
-    .cardItemCarousel {
-        height: 100%;
-    }
-    .itemCarouselImgContainer {
-        display: flex;
-        justify-content: center;
-    }
-    .titleItemCarousel {
-        color: #FFF2E6;;
-        font-size: 1.2rem;
-        margin: 0;
-        text-transform: uppercase;
-    }
-    .imgItemCarousel {
-        padding: 12px;    
-    }
-    .categoryItemCarousel, .stockItemCarousel, .priceItemCarousel {
-        color: #b7b7b7;
-        font-weight: bold;
-        font-size: 1rem;
-        margin: 2px;
-    }
-    .priceItemCarousel span {
-        font-size: 1.4rem;
-    }
-    .infoItemCarousel {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; 
-    } */

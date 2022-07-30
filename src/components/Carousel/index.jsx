@@ -43,7 +43,6 @@ export default function Carousel({ productList }) {
           display: 'flex',
           alignItems: 'center',
           height: 50,
-          pl: 2,
           bgcolor: 'transparent',
         }}
       ><Typography 
@@ -51,7 +50,9 @@ export default function Carousel({ productList }) {
       sx={{
         fontWeight: 'bold',
 				width: '100%',
-        fontSize: '1.2rem'
+        fontSize: '1.2rem',
+        color: '#fff',
+        marginBottom: '6px',
       }}
       >Productos + vendidos
       </Typography>

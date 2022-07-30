@@ -1,63 +1,31 @@
 .loadingContainer {
-    background-color: #1a1c1c;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    gap: 24px;
-    min-height: calc(100vh - 351.61px);
+    min-height: calc(100vh - 276.28px);
 }
 
 .loadingLogo {
     width: 150px;
 }
 
-.awaitLoadingText {
-    color: #b7b7b7;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-@media screen and (min-width: 456px) and (max-width: 599px) {
+@media screen and (min-width: 390px) and (max-width: 599px) {
     .loadingContainer {
-        min-height: calc(100vh - 333.61px);
+        min-height: calc(100vh - 258.28px);
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 899px) {
+@media screen and (min-width: 600px) and (max-width:899px) {
     .loadingContainer {
-        min-height: calc(100vh - 242px);
+        min-height: calc(100vh - 224.67px);
     }
     .loadingLogo {
         width: 250px;
     }
-    .awaitLoadingText {
-        font-size: 1.4rem;
-    }
-    
 }
 
-@media screen and (min-width: 900px) and (max-width: 998px) {
+@media screen and (min-width: 900px) {
     .loadingContainer {
-        min-height: calc(100vh - 266.39px);
+        min-height: calc(100vh - 220.53px);
     }
     .loadingLogo {
         width: 250px;
-    }
-    .awaitLoadingText {
-        font-size: 1.4rem;
-    }
-}
-
-@media screen and (min-width: 999px) {
-    .loadingContainer {
-        min-height: calc(100vh - 280.39px);
-    }
-    .loadingLogo {
-        width: 250px;
-    }
-    .awaitLoadingText {
-        font-size: 1.4rem;
     }
 }
