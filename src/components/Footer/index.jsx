@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import './Footer.css';
@@ -15,8 +16,8 @@ export default function Footer() {
     			<Grid item xs={12} className= 'secondGridContainer'>
 					<p className='creator'>Creado por Lautaro Chaar</p>
 					<Box className='redes'>
-						<a rel='noopener noreferrer' href="https://github.com/LautaroChaar" target="_blank" className='github' ><GitHubIcon sx={{display: 'block'}} /></a>
-						<a rel='noopener noreferrer' href="https://www.instagram.com/lautichaar" target="_blank" className='instagram' ><InstagramIcon sx={{display: 'block'}} /></a>
+						<Link to={"/https://github.com/LautaroChaar"} rel="noreferrer" target="_blank"  className='github' ><GitHubIcon sx={{display: 'block'}} /></Link>
+						<Link to={"/https://www.instagram.com/lautichaar"} rel="noreferrer" target="_blank"  className='instagram' ><InstagramIcon sx={{display: 'block'}} /></Link>
 					</Box>
     			</Grid>
     		</Grid>

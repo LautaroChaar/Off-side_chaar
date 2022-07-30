@@ -1,0 +1,23 @@
+.redirectingContainer {
+    min-height: calc(100vh - 351.61px);
+}
+
+@media screen and (min-width: 600px) and (max-width:899px) {
+    .redirectingContainer {
+        min-height: calc(100vh - 242px);
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width:998px) {
+    .redirectingContainer {
+        min-height: calc(100vh - 266.39px);
+    }
+}
+
+@media screen and (min-width: 999px) {
+    .redirectingContainer {
+        min-height: calc(100vh - 280.39px);
+    }
+}
+
+
