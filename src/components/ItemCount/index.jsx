@@ -4,7 +4,6 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import * as React from "react";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Typography, Box } from '@mui/material';
 import { cartContext } from "../../Context/CartContext";
@@ -13,7 +12,7 @@ import "./ItemCount.css";
 export default function ItemCount({ stock, initial, onAdd, productDetail }) {
 
   const [count, setCount] = React.useState(initial);
-  const { addItem, getQuantity, increaseCartCount } = useContext(cartContext);
+  const { addItem, getQuantity, increaseCartCount } = React.useContext(cartContext);
   const prevAddedQuantity = getQuantity(productDetail.id);
 
   const buyButton = count === 0 

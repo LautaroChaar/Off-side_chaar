@@ -1,6 +1,5 @@
 import React from "react";
 import { cartContext } from "../../Context/CartContext";
-import { useContext } from "react";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
 import { Typography, Box } from '@mui/material';
@@ -11,7 +10,7 @@ import FormInput from "../FormInput";
  
 export default function CheckoutForm() {
 
-  const { cart, totalToPay, clear } = useContext(cartContext);
+  const { cart, totalToPay, clear } = React.useContext(cartContext);
   const [buyerName, setBuyerName] = React.useState("");
   const [phoneNumber, setPhoneNumber] = React.useState("");
   const [email, setEmail] = React.useState("");

@@ -1,7 +1,6 @@
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import * as React from 'react';
 import { Typography, Box } from '@mui/material';
 import Swal from 'sweetalert2';
 import ItemCount from '../ItemCount';
@@ -38,11 +37,11 @@ export default function ItemDetail({ productDetail }) {
 				<Box 
 				sx={{ 
 					display: 'flex',
-    				flexDirection:{ xs: 'column', sm: 'row' },
+    			flexDirection:{ xs: 'column', sm: 'row' },
 					justifyContent: { sm: 'space-evenly' },
 					alignItems: { sm: 'center' },
-    				height: '100%',
-    				width: '100%'
+    			height: '100%',
+    			width: '100%'
 				}}
 				 >
 					<Box>

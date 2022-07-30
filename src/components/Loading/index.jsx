@@ -1,4 +1,3 @@
-import React from 'react';
 import './Loading.css';
 import { Typography, Box } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';

@@ -4,7 +4,6 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
-import { useContext } from "react";
 import { cartContext } from "../../Context/CartContext";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -18,7 +17,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export default function CartWidget() {
   
-  const { cartCount } = useContext(cartContext);
+  const { cartCount } = React.useContext(cartContext);
   
   return (
     <IconButton aria-label="cart" size="large">

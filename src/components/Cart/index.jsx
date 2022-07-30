@@ -1,5 +1,4 @@
 import React from 'react';
-import { useContext } from "react";
 import { cartContext } from "../../Context/CartContext";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
@@ -10,7 +9,7 @@ import { Typography, Box } from '@mui/material';
 
 export default function Cart() {
 
-  const { cart, removeProduct, clear, totalToPay } = useContext(cartContext);
+  const { cart, removeProduct, clear, totalToPay } = React.useContext(cartContext);
 
   let totalCartProducts = cart.length === 0 
   ? 

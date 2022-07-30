@@ -3,18 +3,17 @@ import * as React from 'react';
 import ItemList from '../ItemList';
 import Carousel from '../Carousel';
 import Loading from '../Loading';
-import { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 
 export default function ItemListContainer() {
 
-	const [productList, setProductList] = useState([]);
+	const [productList, setProductList] = React.useState([]);
 	const { category } = useParams();
-	const [loading, setLoading] = useState (true);
+	const [loading, setLoading] = React.useState (true);
 	
-	useEffect (() => {
+	React.useEffect (() => {
 		const db = getFirestore();
 		let collectionRef;
 
@@ -40,10 +39,10 @@ export default function ItemListContainer() {
 				<Box 
 				sx={{
 					padding: '20px',
-    				display: 'flex',
-    				justifyContent: 'center',
-    				alignItems: 'center',
-    				gap: '30px'
+    			display: 'flex',
+    			justifyContent: 'center',
+    			alignItems: 'center',
+    			gap: '30px'
 				}} className='listContainer' >
 					<Box component='section' >
 						<Carousel productList={productList} />

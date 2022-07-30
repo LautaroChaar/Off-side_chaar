@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import ItemDetail from '../ItemDetail';
@@ -7,11 +7,11 @@ import './ItemDetailContainer.css';
 
 export default function ItemDetailContainer() {
 
-  const [productDetail, setProductDetail] = useState([]);
-	const [loading, setLoading] = useState (true);
+  const [productDetail, setProductDetail] = React.useState([]);
+	const [loading, setLoading] = React.useState (true);
 	const {id} = useParams();
 		
-	useEffect(() => {
+	React.useEffect(() => {
 		const db = getFirestore();
 		const collectionDetailRef = doc(db, 'products', id);
 		getDoc(collectionDetailRef).then((res) => {

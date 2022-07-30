@@ -46,7 +46,6 @@ export default function Carousel({ productList }) {
           bgcolor: 'transparent',
         }}
       ><Typography 
-      className='bestSellersText'
       sx={{
         fontWeight: 'bold',
 				width: '100%',
@@ -54,8 +53,8 @@ export default function Carousel({ productList }) {
         color: '#fff',
         marginBottom: '6px',
       }}
-      >Productos + vendidos
-      </Typography>
+        >Productos + vendidos
+        </Typography>
       </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}

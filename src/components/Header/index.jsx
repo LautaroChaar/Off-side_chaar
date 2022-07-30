@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from '../NavBar'
 import { Typography } from '@mui/material';
 import './Header.css';

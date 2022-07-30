@@ -44,8 +44,7 @@ export default function Navbar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
-            }}
-          >
+            }} >
             <Link className='brand' to= {"/"} >ff-side</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -55,8 +54,7 @@ export default function Navbar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+              color="inherit" >
               <MenuIcon sx={{ color: '#78546a' }} />
             </IconButton>
             <Menu
@@ -75,7 +73,6 @@ export default function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
-                
                 '& .MuiPaper-root': {
                   height: '100vh',
                   width: '40vw',
@@ -83,8 +80,6 @@ export default function Navbar() {
                   boxShadow: 'none',
                   left: '0px !important',
                   top: '62px !important'
-                  
-                  
                 },
                 '& .MuiList-root': {
                   height: '100%',
@@ -92,20 +87,13 @@ export default function Navbar() {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-evenly'
-                  
-                  
                 },
                 '& .MuiMenuItem-root': {
                   fontSize: { xs: '1rem', sm: '1.4rem'},
                   fontWeight: 'bold',
                   textTransform: 'uppercase'
-                  
-                  
-                  
-                  
                 }
-              }}
-            >
+              }} >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Link className='categoryMenu' to={`/category/${page}`}>{page}</Link>
@@ -129,8 +117,7 @@ export default function Navbar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
-            }}
-          >
+            }} >
             <Link className='brand' to= {"/"} >ff-side</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'space-evenly' } }}>
@@ -138,8 +125,7 @@ export default function Navbar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#17181a', display: 'block', fontSize: '18px', textDecoration: 'none'}}
-              >
+                sx={{ my: 2, color: '#17181a', display: 'block', fontSize: '18px', textDecoration: 'none'}} >
                 <Link className='categoryName' to={`/category/${page}`}>{page}</Link>
               </Button>
             ))}
