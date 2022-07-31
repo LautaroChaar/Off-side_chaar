@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid, Box, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import './Footer.css';
@@ -41,8 +40,8 @@ export default function Footer() {
 						alignItems: 'center',
 						gap: '10px'
 					}}>
-						<GitHubIcon sx={{ cursor: 'pointer', display: 'block', color: '#dddca8', '&:hover': {color: '#fff'}}} />
-						<InstagramIcon sx={{ cursor: 'pointer', display: 'block',  color: '#dddca8', '&:hover': {color: '#fff'}}} />
+						<a referrerPolicy='noreferrer' rel='noreferrer' href='https://github.com/LautaroChaar' target='_blank' ><GitHubIcon sx={{ cursor: 'pointer', display: 'block', color: '#dddca8', '&:hover': {color: '#fff'}}} /></a>
+						<a referrerPolicy='noreferrer' rel='noreferrer' href='https://www.instagram.com/Lautichaar' target='_blank' ><InstagramIcon sx={{ cursor: 'pointer', display: 'block',  color: '#dddca8', '&:hover': {color: '#fff'}}} /></a>
 					</Box>
     		</Grid>
     	</Grid>
